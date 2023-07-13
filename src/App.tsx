@@ -1,13 +1,14 @@
-
 import styles from "./App.module.css";
+import { Header } from "./components/Header";
 
-function App() {
-  
+export function App() {
   return (
     <>
-      <p>Todo List</p>
+      <Header />
+      <div className={styles.container}>
+        <p>Input</p>
+        <p>list</p>
+      </div>
     </>
   );
 }
-
-export default App;
