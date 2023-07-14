@@ -9,7 +9,7 @@ export function TodoList() {
   const [tasks, setTasks] = useState<number[]>([]);
 
   useEffect(() => {
-    setTasks([1, 2]);
+    //setTasks([1, 2]);
   }, []);
 
   return (
