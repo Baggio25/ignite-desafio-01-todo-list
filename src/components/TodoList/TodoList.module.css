@@ -1,0 +1,72 @@
+.todoListContainer {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.todoListContainerTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.todoListContainerTopTaskCreated {
+  display: flex;
+  gap: 1rem;
+}
+
+.todoListContainerTopTaskCreated span {
+  font-size: 0.875rem;
+  color: var(--blue);
+}
+
+.todoListNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 19px;
+  border-radius: 40%;
+  font-size: 0.75rem;
+
+  color: var(--gray-300);
+  background: var(--gray-400);
+}
+
+.todoListContainerTopTaskFinished {
+  display: flex;
+  gap: 1rem;
+}
+
+.todoListContainerTopTaskFinished span {
+  font-size: 0.875rem;
+  color: var(--purple);
+}
+
+.todoListContainerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gray-400);
+}
+
+.todoListContainerBottom img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+}
+
+.todoListContainerBottom span {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.todoListContainerBottom p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.todoListContainerTasks {
+  
+}
