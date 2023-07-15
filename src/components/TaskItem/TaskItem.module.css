@@ -11,6 +11,8 @@
 
 .taskItemLeft {
   display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .taskItemCheckboxContainer input {
@@ -26,6 +28,10 @@
   border-radius: 0.7rem;
   border: 2px solid var(--purple-dark);
   transition: 0.1s ease-in-out background-color;
+}
+
+.taskItemCheckboxContainer input:hover + label::after {
+  background: var(--blue-dark);
 }
 
 .taskItemCheckboxContainer input:checked + label::after {
@@ -56,9 +62,16 @@
 }
 
 .taskItemRight {
+  display: flex;
+  align-items: center;
   width: 1.5rem;
   height: 1.5rem;
   margin-left: 0.75rem;
   cursor: pointer;
   color: var(--gray-300);
+}
+
+.taskItemRight:hover {
+  color: var(--red-500);
+  background: var(--gray-400);
 }

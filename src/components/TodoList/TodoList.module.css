@@ -32,6 +32,19 @@
   background: var(--gray-400);
 }
 
+.todoListNumberNoEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 19px;
+  border-radius: 25px 25px;
+  font-size: 0.75rem;
+
+  color: var(--gray-300);
+  background: var(--gray-400);
+}
+
 .todoListContainerTopTaskFinished {
   display: flex;
   gap: 1rem;

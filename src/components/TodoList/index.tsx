@@ -4,24 +4,44 @@ import TaskImage from "../../assets/task.svg";
 
 import styles from "./TodoList.module.css";
 import { TaskItem } from "../TaskItem";
+import { Task } from "../../@types/task";
 
-export function TodoList() {
-  const [tasks, setTasks] = useState<number[]>([]);
+interface ITodoList {
+  tasks: Task[];
+  onToggleTaskCompletion: (id: string) => void;
+  onDeleteTask: (id: string) => void;
+  completeTasksNumber: number;
+}
+
+export function TodoList({
+  tasks,
+  onToggleTaskCompletion,
+  onDeleteTask,
+  completeTasksNumber,
+}: ITodoList) {
+  const [tasksCompleted, setTasksCompleted] = useState(0);
 
   useEffect(() => {
-    setTasks([1]);
-  }, []);
+    console.log("Tasks completed: " + completeTasksNumber);
+    setTasksCompleted(completeTasksNumber);
+  }, [completeTasksNumber]);
 
   return (
     <div className={styles.todoListContainer}>
       <div className={styles.todoListContainerTop}>
         <div className={styles.todoListContainerTopTaskCreated}>
           <span>Tarefas criadas </span>
-          <p className={styles.todoListNumber}>0</p>
+          <p className={styles.todoListNumber}>{tasks.length}</p>
         </div>
         <div className={styles.todoListContainerTopTaskFinished}>
           <span>Tarefas concluídas </span>
-          <p className={styles.todoListNumber}>0</p>
+          {tasksCompleted === 0 ? (
+            <p className={styles.todoListNumber}>0</p>
+          ) : (
+            <p className={styles.todoListNumberNoEmpty}>
+              {tasksCompleted} de {tasks.length}
+            </p>
+          )}
         </div>
       </div>
 
@@ -33,8 +53,13 @@ export function TodoList() {
         </div>
       ) : (
         <div className={styles.todoListContainerTasks}>
-          {tasks.map((index) => (
-            <TaskItem key={index}/>
+          {tasks.map((task) => (
+            <TaskItem
+              key={task.id}
+              task={task}
+              onToggleTaskCompletion={() => onToggleTaskCompletion(task.id)}
+              onDeleteTask={() => onDeleteTask(task.id)}
+            />
           ))}
         </div>
       )}

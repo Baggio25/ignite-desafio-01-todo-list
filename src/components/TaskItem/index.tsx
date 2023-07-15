@@ -1,36 +1,41 @@
 import { Trash } from "phosphor-react";
 
 import styles from "./TaskItem.module.css";
-import { useState } from "react";
+import { Task } from "../../@types/task";
 
-export function TaskItem() {
-  const [isChecked, setIsChecked] = useState(false);
-  
-  function handleToggleTaskCompletion() {
-    setIsChecked(!isChecked);
-  }
+interface ITaskITem {
+  task: Task;
+  onToggleTaskCompletion: (id: string) => void;
+  onDeleteTask: (id: string) => void;
+}
 
-  console.log(isChecked);
-
+export function TaskItem({ task, onToggleTaskCompletion, onDeleteTask }: ITaskITem) {
   return (
     <div className={styles.taskItemContainer}>
       <div className={styles.taskItemLeft}>
         <div className={styles.taskItemCheckboxContainer}>
-          <input 
-            defaultChecked={isChecked}
-            type="checkbox" 
-            id="checkbox1" 
-            onClick={() => handleToggleTaskCompletion()}
+          <input
+            defaultChecked={task.isComplete}
+            type="checkbox"
+            id={task.id}
+            onClick={() => onToggleTaskCompletion(task.id)}
           />
-          <label htmlFor="checkbox1"/>
+          <label htmlFor={task.id} />
         </div>
-        <span className={!isChecked ? styles.taskItemLeftSpan : styles.taskItemLeftSpanUnderlined}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
-          corrupti harum vitae laudantium culpa corporis incidunt quis provident
-          magnam mollitia!
+        <span
+          className={
+            !task.isComplete
+              ? styles.taskItemLeftSpan
+              : styles.taskItemLeftSpanUnderlined
+          }
+        >
+          {task.title}
         </span>
       </div>
-      <div className={styles.taskItemRight}>
+      <div 
+        className={styles.taskItemRight}
+        onClick={() => onDeleteTask(task.id)}
+      >
         <Trash />
       </div>
     </div>
