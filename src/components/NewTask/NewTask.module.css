@@ -41,4 +41,8 @@
   background: var(--blue);
 }
 
-
+@media (max-width: 576px) {
+  .newTaskButton span {
+    display: none;
+  }
+}

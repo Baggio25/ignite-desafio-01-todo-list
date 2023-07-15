@@ -22,7 +22,6 @@ export function TodoList({
   const [tasksCompleted, setTasksCompleted] = useState(0);
 
   useEffect(() => {
-    console.log("Tasks completed: " + completeTasksNumber);
     setTasksCompleted(completeTasksNumber);
   }, [completeTasksNumber]);
 

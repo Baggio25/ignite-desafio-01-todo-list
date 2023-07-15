@@ -16,8 +16,6 @@ export function App() {
     return task.isComplete !== false;
   });
 
-  console.log("App --> Completed :" + completedTasks.length);
-
   useEffect(() => {
     setTasks([
       {

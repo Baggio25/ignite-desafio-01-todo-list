@@ -81,3 +81,25 @@
   font-weight: 400;
 }
 
+@media (max-width: 576px) {
+  .newTaskButton span {
+    display: none;
+  }
+
+  .todoListContainerTopTaskCreated span {
+    font-size: 0.80rem;
+  }
+
+  .todoListNumber {
+    font-size: 0.70rem;
+  }
+
+  .todoListNumberNoEmpty {
+    font-size: 0.70rem;
+  }
+
+  .todoListContainerTopTaskFinished span {
+    font-size: 0.80rem;
+    color: var(--purple);
+  }
+}
