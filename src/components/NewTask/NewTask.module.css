@@ -3,7 +3,7 @@
   width: 100%;
   height: 3.375rem;
 
-  margin-top: -3.75rem;
+  margin-top: -4.75rem;
 }
 
 .newTaskInput {
@@ -12,7 +12,7 @@
   border-radius: 8px;
   padding: 1rem;
   height: 3.375rem;
-  
+
   border: 1px solid var(--gray-700);
   color: var(--gray-300);
   background: var(--gray-500);
@@ -25,8 +25,8 @@
   height: 3.375rem;
   padding: 1rem;
   cursor: pointer;
-  border-radius: 8px;  
-  
+  border-radius: 8px;
+
   border: transparent;
   color: var(--gray-100);
   background: var(--blue-dark);
@@ -40,3 +40,5 @@
   transition: background-color 0.2s;
   background: var(--blue);
 }
+
+
